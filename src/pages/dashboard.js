@@ -128,7 +128,7 @@ export default function Dashboard() {
   // const [message, setMessage] = React.useState("");
   const [gender, setGender] = React.useState("male");
 
-  const getData = async () => {
+  const getData = React.useCallback( async () => {
     try {
       let blankArr = [];
       const db = fireDatabase;
@@ -146,12 +146,12 @@ export default function Dashboard() {
       // setIsOpen(true);
       // setMessage("something Went wrong");
     }
-  };
+  }, [gender])
 
 
   React.useEffect(() => {
     getData()
-  },[gender])
+  },[gender, getData])
 
   return (
     <ThemeProvider theme={defaultTheme}>
