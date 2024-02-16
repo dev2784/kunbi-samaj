@@ -151,7 +151,7 @@ export default function Dashboard() {
 
   React.useEffect(() => {
     getData()
-  },[gender,getData])
+  },[gender])
 
   return (
     <ThemeProvider theme={defaultTheme}>
