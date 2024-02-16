@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Link from '@mui/material/Link';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -9,9 +8,6 @@ import Avatar from '@mui/material/Avatar';
 import Title from './Title';
 
 
-function preventDefault(event) {
-  event.preventDefault();
-}
 
 export default function TableComponent({header, rows, title}) {
   return (

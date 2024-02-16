@@ -24,7 +24,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import TableComponent from '../components/Table';
 import Copyright from '../components/Footer';
-import fireDatabase, { logOut } from "../firebaseConfig";
+import fireDatabase from "../firebaseConfig";
 import {
   collection,
   getDocs,
@@ -124,8 +124,8 @@ export default function Dashboard() {
   };
 
   const [data, setData] = React.useState([]);
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [message, setMessage] = React.useState("");
+  // const [isOpen, setIsOpen] = React.useState(false);
+  // const [message, setMessage] = React.useState("");
   const [gender, setGender] = React.useState("male");
 
   const getData = async () => {
@@ -143,15 +143,15 @@ export default function Dashboard() {
       setData([...blankArr]);
     } catch (e) {
       console.log(e)
-      setIsOpen(true);
-      setMessage("something Went wrong");
+      // setIsOpen(true);
+      // setMessage("something Went wrong");
     }
   };
 
 
   React.useEffect(() => {
     getData()
-  },[gender])
+  },[gender,getData])
 
   return (
     <ThemeProvider theme={defaultTheme}>
